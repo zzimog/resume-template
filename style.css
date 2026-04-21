@@ -22,12 +22,12 @@ body {
 
 h1 {
   text-align: center;
-  margin-block: 0 2rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  margin-block-start: 2rem;
-  margin-block-end: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   padding-block-end: 0.75rem;
   color: var(--primary);
   font-weight: 600;
@@ -37,6 +37,10 @@ h2 {
 
 h3 {
   margin: 0;
+}
+
+p {
+  margin-block: 1rem;
 }
 
 a {
@@ -52,7 +56,7 @@ a {
     text-decoration: underline;
   }
 
-  x-icon {
+  i[style^='--icon'] {
     width: 1.25em;
     height: 1.25em;
   }
@@ -67,23 +71,40 @@ code {
   background-color: #fff;
 }
 
+table {
+  width: fit-content;
+  font-size: 0.9em;
+
+  td {
+    padding-inline-end: 1rem;
+
+    &:last-child {
+      font-style: italic;
+    }
+  }
+}
+
 ul {
   margin: 0;
   padding-inline-start: 30px;
 }
 
-header ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0;
+header {
+  margin-block-end: 2rem;
 
-  li {
+  ul {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9em;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9em;
+    }
   }
 }
 
@@ -91,12 +112,7 @@ article {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-block-start: 1rem;
-  margin-block-end: 2rem;
-
-  p {
-    margin-block: 1rem;
-  }
+  margin-block: 1rem;
 
   section {
     display: flex;
@@ -112,4 +128,12 @@ article {
       font-size: 0.9rem;
     }
   }
+}
+
+i[style^='--icon'] {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: currentColor;
+  mask: var(--icon) no-repeat center / contain;
 }
